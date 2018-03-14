@@ -1,6 +1,7 @@
 package com.example.guest.alphagrid;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 public class AlphabetAdapter extends BaseAdapter {
     private Context mContext;
     private String[] mLetters;
+//    private Typeface mTypeFace;
 
     @Override
     public int getCount() {
@@ -39,7 +41,8 @@ public class AlphabetAdapter extends BaseAdapter {
             TextView letterView = (TextView) gridView
                     .findViewById(R.id.grid_item_letter);
 
-            letterView.setText("A"); //DUMMY DATA
+            letterView.setText(mLetters[position]);
+//            letterView.setTypeface(mTypeFace);
         } else {
             gridView = (View) convertView;
         }
@@ -50,5 +53,6 @@ public class AlphabetAdapter extends BaseAdapter {
     public AlphabetAdapter (Context context, String[] letters){
         this.mContext = context;
         this.mLetters = letters;
+//        this.mTypeFace = typeface;
     }
 }
