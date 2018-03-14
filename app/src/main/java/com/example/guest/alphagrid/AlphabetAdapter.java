@@ -12,7 +12,7 @@ import android.widget.TextView;
 public class AlphabetAdapter extends BaseAdapter {
     private Context mContext;
     private String[] mLetters;
-//    private Typeface mTypeFace;
+    private Typeface mTypeFace;
 
     @Override
     public int getCount() {
@@ -42,7 +42,7 @@ public class AlphabetAdapter extends BaseAdapter {
                     .findViewById(R.id.grid_item_letter);
 
             letterView.setText(mLetters[position]);
-//            letterView.setTypeface(mTypeFace);
+            letterView.setTypeface(mTypeFace);
         } else {
             gridView = (View) convertView;
         }
@@ -50,9 +50,9 @@ public class AlphabetAdapter extends BaseAdapter {
         return gridView;
     }
 
-    public AlphabetAdapter (Context context, String[] letters){
+    public AlphabetAdapter (Context context, String[] letters, Typeface typeface){
         this.mContext = context;
         this.mLetters = letters;
-//        this.mTypeFace = typeface;
+        this.mTypeFace = typeface;
     }
 }
